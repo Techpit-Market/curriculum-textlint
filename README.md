@@ -6,40 +6,38 @@ curriculum-textlintは校正コストを軽減するために[textlint](https://
 textlintのルールに関しては、技術書向けのtextlintルールプリセット[textlint-rule-preset-ja-technical-writing](https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing)を採用しています。厳しすぎるルールや足りないルールがあればslackやメールでお気軽にご連絡していただけると幸いです。
 
 
-## (注意点)教材はcurriculumディレクトリ内に作成してください
-このリポジトリで設定しているtextlintはcurriculumディレクトリ内のマークダウンファイルを対象としています。
-なので、教材はcurriculumディレクトリ内で作成してください。
-
-
 ## textlintのセットアップ方法
 
-### 1. カリキュラムのルートディレクトリにサブモジュールを追加する
-Gitサブモジュールを追加してください。
+textlint-rule-preset-techpit-curriculum はまだ npm に publish されていないため、Gitリポジトリの指定でインストールが可能です。
+Gitリポジトリは次のとおり： `takayukioda/textlint-rule-preset-techpit-curriculum#master`
 
+```shell
+npm install --save-dev textlint takayukioda/textlint-rule-preset-techpit-curriculum#master
 ```
-$ git submodule add git@github.com:Techpit-Market/curriculum-textlint.git
-```
 
-### 2. ルートディレクトリの package.json に次のスクリプトを追加してください
+### 2. ルートディレクトリの package.json に次の設定を追加してください
 
-package.jsonがルートディレクトリにある場合は以下のコードを追加してください。package.jsonファイルがルートディレクトにない場合は、package.jsonファイルを追加して以下のコードを追記してください。
+package.jsonがルートディレクトリにある場合は以下の設定を追加してください。
 
 ```json
 {
   "scripts": {
-    "postinstall": "npm run update:submodule",
-    "postupdate": "npm run update:submodule",
-    "update:submodule": "git submodule update --init && git submodule foreach git pull origin master && cd curriculum-textlint && npm install",
-    "check": "cd curriculum-textlint && npm run check",
-    "check:fix": "cd curriculum-textlint && npm run check:fix"
+    "check": "textlint ./curriculum/",
+    "check:fix": "textlint --fix ./curriculum/"
   }
 }
+```
+
+package.jsonファイルがルートディレクトにない場合は、次のコマンドを実行してから、上記の設定をpackage.jsonファイルに追記してください。
+
+```shell
+# package.json をテンプレートに沿って生成
+npm init -y
 ```
 
 ### 3. コマンドラインでtextlintを実行する
 
 ```
-npm install
 npm run check
 
 # 機械的に修正可能な箇所を修正する場合は次のコマンドを実行する

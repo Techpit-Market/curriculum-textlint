@@ -1,5 +1,5 @@
+# prh version
 version: 1
-
 rules:
   # Google Chromeの表記の統一
   - pattern:
