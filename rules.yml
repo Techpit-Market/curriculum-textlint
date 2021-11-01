@@ -459,7 +459,7 @@ rules:
     - Dualコア
     expected: デュアルコア
 # ト
-# ドキュメント ドキュメンテーション
+# ドキュメント ドキュメンテーション ○
   - pattern:
     - ドキュメンテーション
     expected: ドキュメント
@@ -472,6 +472,10 @@ rules:
     - /ドラッグ・アンド・ドロップ|ドラッグアンドドロップ/
     expected: ドラッグ&ドロップ
 # ナ
+# なお 尚
+  - pattern:
+    - 尚
+    expected: なお
 # 二
 # ヌ
 # ネ
@@ -604,7 +608,7 @@ rules:
     expected: ファイアウォール
 # フィルタ フィルター
   - pattern:
-    - フィルター
+    - /フィルター/
     expected: フィルタ
 # フィクスチャ フィクスチャー
   - pattern:
@@ -703,20 +707,21 @@ rules:
   - pattern:
     - マネージメント
     expected: マネジメント
-# マネージャー マネジャー|マネージャ|マーネジャ|マネジャー|Mgr|MG ○
+# マネージャー マネジャー|マネージャ|マーネジャ|Mgr|MG ○
   - pattern:
     - マネジャー
-    - マネージャ
+    - /マネージャ(?!ー)/
     - マーネジャ
-    - マネジャー
     - Mgr
     - MG
     expected: マネージャー
 # マスタ Master|master 
-  - pattern:
-    - Master
-    - master
-    expected: マスタ
+# master ブランチ等でmasterは利用しています
+# master
+  # - pattern:
+  #   - Master
+  #   - master
+  #   expected: マスタ
 # マスタ／スレーブ マスタ・スレーブ
   - pattern:
     - マスタ・スレーブ
@@ -750,7 +755,7 @@ rules:
     expected: メンテナ
 # メンバー メンバ ,人間の意味では「メンバー」、変数などは「メンバ」
   - pattern:
-    - メンバ
+    - /メンバ(ー)/
     expected: メンバー
 # モ
 # モジュール module|Module
@@ -902,36 +907,22 @@ rules:
   - pattern:
     - ウェブ
     - ウェッブ
-    - WEB
-    - web
+    - /[Ww][Ee][Bb]/
+    options:
+      wordBoundary: true
     expected: Web
-
-# # アプリケーション app|application|アプリ|アプリーケーション
-#   - pattern:
-#     - app
-#     - application
-#     - アプリ
-#     - アプリーケーション
-#     expected: アプリケーション
-# アプリケーション app|application|アプリ|アプリーケーション
+# Webアプリケーション
   - pattern:
     - webapp
     - webapplication
-    - webアプリ
-    - webアプリーケーション
+    - /([Ww][Ee][Bb])アプリケーション/
     expected: Webアプリケーション
-
-# Web WEB|web ○
-  - pattern:
-    - WEB
-    - web
-    expected: Web
 # Webサイト webサイト|website|Website|ウェブサイト ○
   - pattern:
-    - webサイト
-    - website
-    - Website
-    - web site
+    - /([Ww][Ee][Bb])サイト/
+    - /([Ww][Ee][Bb] ?)サイト/
+    - /([Ww][Ee][Bb][Ss][Ii][Tt][Ee])/
+    - /([Ww][Ee][Bb] ?[Ss][Ii][Tt][Ee])/
     - ウェブサイト
     expected: Webサイト
 # 記述子 ディスクリプタ
@@ -962,26 +953,20 @@ rules:
 # Mac
 # macOS Mac OS|Mac OS X||MacOS|Mac OS X|MacOSX
   - pattern:
-    - macos
-    - Macos
-    - MacOS
-    - Mac OS
-    - MacOSX
-    - Mac OS X
-    - mac OS X
+    - /([Mm][Aa][Cc][Oo][Ss])/
+    - /([Mm][Aa][Cc] ?[Oo][Ss])/
+    - /([Mm][Aa][Cc][Oo][Ss][Xx])/
+     /([Mm][Aa][Cc] ?[Oo][Ss] ?[Xx])/
     expected: macOS
 # MacBook Mac Book|
   - pattern:
-    - macbook
-    - Macbook
-    - macBook
-    - Mac Book
-    - mac Book
-    - Mac book
+    - /([Mm][Aa][Cc][Bb][Oo][Oo][Kk])/
+    - /([Mm][Aa][Cc] ?[Bb][Oo][Oo][Kk])/
     expected: MacBook
 # MacBook Air
   - pattern:
-    - MacBook air
+    - /([Mm][Aa][Cc][Bb][Oo][Oo][Kk][Aa][Ii][Rr])/
+    - /([Mm][Aa][Cc] ?[Bb][Oo][Oo][Kk] ?[Aa][Ii][Rr])/
     expected: MacBook Air
 # MacBook Pro
   - pattern:
@@ -1198,6 +1183,8 @@ rules:
     - ruby on rails
     - ror
     - RoR
+    options:
+      wordBoundary: true
     expected: Ruby on Rails
 # RubyGems Ruby Gems
   - pattern:
@@ -1299,14 +1286,16 @@ rules:
   - pattern:
     - dbflute
     expected: DBFlute
-# Git ○
-  - pattern:
-    - git
-    expected: Git
 # GitHub github ○
   - pattern:
-    - github
+    - /([Gg][Ii][Tt][Hh][Uu][Bb])/
+    - /([Gg][Ii][Tt] ?[Hh][Uu][Bb])/
     expected: GitHub
+# Git ○
+  - pattern:
+    - /([Gg][Ii][Tt])/
+    expected: Git
+    prh: URL内のgitはgitとします。
 # Subversion SubVersion|subversion
   - pattern:
     - SubVersion
@@ -1339,8 +1328,9 @@ rules:
     - Vi
     - visual editor
     - visual interface
+    options:
+      wordBoundary: true
     expected: vi
-    prh: viエディターでない場合は無視してください。
 # Vim vim
   - pattern:
     - vim
@@ -1359,6 +1349,10 @@ rules:
         to: VS Code
       - from: VS Code
         to: VS Code
+# Markdown
+  - pattern:
+    - /([Mm][Aa][Rr][Kk][Dd][Oo][Ww][Nn])/
+    expected: Markdown
 
 # Vimスクリプト vim script
 # VMware
@@ -1459,9 +1453,6 @@ rules:
     - 薔薇
     expected: バラ
 
-# 作る つくら|つくり|つくる|つくれ|つくろ|
-  - pattern: /つく([らりるれろっ])/
-    expected: 作$1
 # 1カ所 一1箇所
   - pattern: /([一二三四五六七八九十０-９])箇所/
     expected: $1ヵ所
@@ -1471,25 +1462,73 @@ rules:
 # ヵ ヶ
   - pattern: ヶ
     expected: ヵ
-# ぜひ 是非
-  - pattern: 是非
-    expected: ぜひ
-  - pattern:
-      - ひととおり
-      - ひと通り
-      - 一とおり
-    expected: 一通り
-# 繋げ繋ぎ
-  - pattern: /繋([らりるれろっ])/
-    expected: つなが$1
-  - pattern: /繋([いがぎぐげご])/
-    expected: つな$1
+
 # 行う
   - pattern: /行な([わいうえおっ])/
     expected: 行$1
 # いったん 一旦
   - pattern: 一旦
     expected: いったん
+# いろいろ 色々
+  - pattern: 色々
+    expected: いろいろ
+# 謳っている
+  - pattern: 謳
+    expected: うた
 # ごとに 毎に
   - pattern: 毎に
     expected: ごとに
+#　　すいこう 推敲
+  - pattern: 推敲
+    expected: すいこう
+    prh: 「推敲」は常用漢字外です。
+# さまざま 様々
+  - pattern: 様々
+    expected: さまざま
+# さらに 更に
+  - pattern: /([^変])更に/
+    expected: $1さらに
+# ぜひ 是非
+  - pattern: 是非
+    expected: ぜひ
+# ため 為
+  - pattern: 為
+    expected: ため
+    prh: 「ため」と読む場合はひらがな表記
+# 作る つくら|つくり|つくる|つくれ|つくろ|
+  - pattern: /つく([らりるれろっ])/
+    expected: 作$1
+# 繋げ繋ぎ
+  - pattern: /繋([らりるれろっ])/
+    expected: つなが$1
+    prh: 「繫/繋」は常用漢字外です。
+  - pattern: /繋([いがぎぐげご])/
+    expected: つな$1
+    prh: 「繫/繋」は常用漢字外です。
+# できます 出来ます
+  - pattern:
+    - 出来ます
+    expected: できます
+# フォルダ フォルダー
+  - pattern:
+    - /フォルダ(ー)/
+    expected: フォルダ
+# ほぼない ほぼ無い
+  - pattern:
+    - ほぼ無い
+    expected: ほぼない
+# 一通り ひととおり
+  - pattern:
+      - ひととおり
+      - ひと通り
+      - 一とおり
+    expected: 一通り
+# なぜ 何故
+  - pattern:
+    - 何故
+    expected: なぜ
+# もらう 貰
+  - pattern: /貰([わいうえおっ])/
+    expected: もら$1
+    prh: 「貰う」は常用漢字外です。
+
