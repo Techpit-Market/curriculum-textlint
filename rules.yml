@@ -1,26 +1,1534 @@
 version: 1
-
 rules:
-  # Google Chromeの表記の統一
+
+  # 解答 直したいワードA|直したいワードB
+  # - pattern:
+  #   - 直したい言葉A
+  #   - 直したい言葉B
+  #   expected: 解答
+
+# 【カタカナ・外来語系】
+
+# ア
+# アイデア アィディア|アイディア|アィデア ○
   - pattern:
-    - Google chrome
-    - google chrome
-    expected: Google Chrome
-  # LINE BOTの表記の統一
+    - アィディア
+    - アイディア
+    - アィデア
+    expected: アイデア
+# アクティビティ Activity|アクティビティー
   - pattern:
-    - LINEbot
-    expected: LINE BOT
-  # ToDoの表記の統一
+    - Activity
+    - アクティビティー
+    expected: アクティビティ
+# アスタリスク アステリスク
   - pattern:
-    - todo
-    expected: ToDo
-  # コピー&ペーストは略さずに書く
+    - アステリスク
+    expected: アスタリスク
+# アダプタ アダプター
   - pattern:
+    - アダプター
+    expected: アダプタ
+# アニメータ アニメーター
+  - pattern:
+    - アニメーター
+    expected: アニメータ
+# アノテーション アノーテーション
+  - pattern:
+    - アノーテーション
+    expected: アノテーション
+# アプレット Applet
+  - pattern:
+    - Applet
+    expected: アプレット
+# アンダースコア アンダーバー
+  - pattern:
+    - アンダーバー
+    expected: アンダースコア
+# アーキテクチャ アーキテクチャー|アーキティクチャ|アーキテクチュア ○
+  - pattern:
+    - アーキテクチャー
+    - アーキティクチャ
+    - アーキテクチュア
+    expected: アーキテクチャ
+# イ
+# インストーラ インストーラー
+  - pattern:
+    - インストーラー
+    expected: インストーラ
+# インスパイア インスパイヤ
+  - pattern:
+    - インスパイヤ
+    expected: インスパイア
+# インターフェース インタフェイス|インタフェース|インターフェイス|インターフェィス ○
+  - pattern:
+    - インタフェイス
+    - インタフェース
+    - インターフェイス
+    - インターフェィス
+    expected: インターフェース
+# インタプリタ インタープリタ|インタプリター|インタープリター ○
+  - pattern:
+    - インタープリタ
+    - インタプリター
+    - インタープリター
+    expected: インタプリタ
+# インテント Intent
+  - pattern:
+    - Intent
+    expected: インテント
+# インデックス インデクス
+  - pattern:
+    - インデクス
+    expected: インデックス
+# ウ
+# ウィジェット Widget|widget
+  - pattern:
+    - Widget
+    - widget
+    expected: ウィジェット
+# ウィルス ウイルス
+  - pattern:
+    - ウイルス
+    expected: ウィルス
+# ウィンドウ ウインドウ
+  - pattern:
+    - ウインドウ
+    expected: ウィンドウ
+# ウェア ウエア
+  - pattern:
+    - ウエア
+    expected: ウェア
+# エ
+# エディタ エディター ○
+  - pattern:
+    - エディター
+    expected: エディタ
+# エミッタ エミッター
+  - pattern:
+    - エミッター
+    expected: エミッタ
+# エンコーダ エンコーダー
+  - pattern:
+    - エンコーダー
+    expected: エンコーダ
+# エミュレータ エミュレーター
+  - pattern:
+    - エミュレーター
+    expected: エミュレータ
+# エンティティ Entity|entity|エンティティー
+  - pattern:
+    - Entity
+    - entity
+    - エンティティー
+    expected: エンティティ
+# エントリ エントリー
+  - pattern:
+    - エントリー
+    expected: エントリ
+# オ
+# オプション オブション
+  - pattern:
+    - オブション
+    expected: オプション
+# カ
+# カウンタ カウンター
+  - pattern:
+    - カウンター
+    expected: カウンタ
+# ガベージ ガーベジ|ガーベージ|ガーベッジ
+  - pattern:
+    - ガーベジ
+    - ガーベージ
+    - ガーベッジ
+    expected: ガベージ
+# カテゴリ カテゴリー
+  - pattern:
+    - カテゴリー
+    expected: カテゴリ
+# キ
+# キャラクタ キャラクター
+  - pattern:
+    - キャラクター
+    expected: キャラクタ
+# キャッシュ cache|Cache
+  - pattern:
+    - cache
+    - Cache
+    expected: キャッシュ
+# ク
+# クアッドコアCPU Quad Core CPU
+  - pattern:
+    - Quad Core CPU
+    expected: クアッドコアCPU
+# クアッドコア クァッドコア|Quad Core|クァッドCore|Quadコア
+  - pattern:
+    - クアッドコア
+    - クァッドコア
+    - Quad Core
+    - クァッドCore
+    - Quadコア
+    expected: クアッドコア
+# クエリ文字列 QueryString|Query String|クエリストリング|クエリーストリング
+  - pattern:
+    - QueryString
+    - Query String
+    - クエリストリング
+    - クエリーストリング
+    expected: クエリ文字列
+# クエリ クエリー
+  - pattern:
+    - クエリー
+    expected: クエリ
+# クライアント／サーバ クライアント/サーバ|クライアント/サーバー|クライアント・サーバ|クライアント・サーバー|クライアントサーバ|クライアントサーバー
+  - pattern:
+    - クライアント/サーバ
+    - クライアント/サーバー
+    - クライアント・サーバ
+    - クライアント・サーバー
+    - クライアントサーバ
+    - クライアントサーバー
+    expected: クライアント／サーバ
+# グラウンド グランド
+  - pattern:
+    - グランド
+    expected: グラウンド
+# クラスタ クラスター
+  - pattern:
+    - クラスター
+    expected: クラスタ
+# グリッド Grid
+  - pattern:
+    - Grid
+    expected: グリッド
+# クロージャ クロージャー
+  - pattern:
+    - クロージャー
+    expected: クロージャ
+# クローラ クローラー
+  - pattern:
+    - クローラー
+    expected: クローラ
+# ケ
+# ゲッタ ゲッター
+  - pattern:
+    - ゲッター
+    expected: ゲッタ
+# コ
+# コピー&ペースト コピー＆ペースト|コピペ|コピーアンドペースト
+  - pattern:
+    - コピー＆ペースト
     - コピペ
+    - コピーアンドペースト
     expected: コピー&ペースト
-  # スマートフォンは略さずに書く
+# コミッター コミッタ ○
+  - pattern:
+    - コミッタ
+    expected: コミッター
+# コミュニケーション コミニュケーション ○
+  - pattern:
+    - コミニュケーション
+    expected: コミュニケーション
+# コンストラクタ コンストラクター
+  - pattern:
+    - コンストラクター
+    expected: コンストラクタ
+# コンテキスト コンテクスト
+  - pattern:
+    - コンテクスト
+    expected: コンテキスト
+# コンテントプロバイダ Content provider
+  - pattern:
+    - Content provider
+    expected: コンテントプロバイダ
+# コンテナ コンテナー
+  - pattern:
+    - コンテナー
+    expected: コンテナ
+# コンピュータ コンピューター
+  - pattern:
+    - コンピューター
+    expected: コンピュータ
+# コンパイラ compiler|コンパイラー ○
+  - pattern:
+    - compiler
+    - コンパイラー
+    expected: コンパイラ
+# コントローラ コントローラー
+  - pattern:
+    - コントローラー
+    expected: コントローラ
+# サ
+# サーバ サーバー ○
+  - pattern:
+    - サーバー
+    expected: サーバ
+# サーバサイド サーバーサイド ○
+  - pattern:
+    - サーバーサイド
+    expected: サーバサイド 
+# サーブレット Servlet|SERVLET !Java
+  - pattern:
+    - Servlet
+    - SERVLET
+    expected: サーブレット
+# サーブレット/JSP サーブレット／JSP|サーブレット＆JSP|サーブレット&JSP !Java
+  - pattern:
+    - サーブレット／JSP
+    - サーブレット＆JSP
+    - サーブレット&JSP
+    expected: サーブレット/JSP
+# シ
+# ジェネレータ ジェネレーター
+  - pattern:
+    - ジェネレーター
+    expected: ジェネレータ
+# ジェネレーティブ ジェネレイティブ
+  - pattern:
+    - ジェネレイティブ
+    expected: ジェネレーティブ
+# ジオタグ Geotag|geotag
+  - pattern:
+    - Geotag
+    - geotag
+    expected: ジオタグ
+# シミュレー シュミレー
+  - pattern:
+    - シュミレー
+    expected: シミュレー
+# ス
+# スカラ スカラー
+  - pattern:
+    - スカラー
+    expected: スカラ
+# スタンドアローン スタンドアロン
+  - pattern:
+    - スタンドアロン
+    expected: スタンドアローン
+# ストアド ストアード
+  - pattern:
+    - ストアード
+    expected: ストアド
+# ストレージ ストレッジ|ストレジ
+  - pattern:
+    - ストレッジ
+    - ストレジ
+    expected: ストレージ
+# スマートフォン スマフォ|スマホ ○
   - pattern:
     - スマフォ
     - スマホ
     expected: スマートフォン
+# スレーブ スレイブ|Slave ,[^.]
+  - pattern:
+    - スレイブ
+    - Slave
+    expected: スレーブ
+# セ
+# セキュリティ セキュリティー ○
+  - pattern:
+    - セキュリティー
+    expected: セキュリティ
+# セッション session|Session
+  - pattern:
+    - session
+    - Session
+    expected: セッション
+# セッタ セッター
+  - pattern:
+    - セッター
+    expected: セッタ
+# セレクタ セレクター
+  - pattern:
+    - セレクター
+    expected: セレクタ
+# ソ
+# ソフトウェア ソフトウエア ○
+  - pattern:
+    - ソフトウエア
+    expected: ソフトウェア
+# タ
+# ダイアグラム ダイヤグラム
+  - pattern:
+    - ダイヤグラム
+    expected: ダイアグラム
+# タイムスタンプ timestamp|Timestamp
+  - pattern:
+    - timestamp
+    - Timestamp
+    expected: タイムスタンプ
+# チ
+# チェイン チェーン
+  - pattern:
+    - チェーン
+    expected: チェイン
+# ツ
+# ツイート tweet|Tweet|ツィート
+  - pattern:
+    - tweet
+    - Tweet
+    - ツィート
+    expected: ツイート
+# ツリーオブジェクト ツリー・オブジェクト
+  - pattern:
+    - ツリー・オブジェクト
+    expected: ツリーオブジェクト
+# ツリーエントリ ツリー・エントリ
+  - pattern:
+    - ツリー・エントリ
+    expected: ツリーエントリ
+# テ
+# ディレクター ディレクタ
+  - pattern:
+    - ディレクタ
+    expected: ディレクター
+# デコーダ デコーダー
+  - pattern:
+    - デコーダー
+    expected: デコーダ
+# テーブル table|Table [^◆],[^◆]
+  - pattern:
+    - table
+    - Table
+    expected: テーブル
+# データサービス Data Services
+  - pattern:
+    - Data Services
+    expected: データサービス
+# データ同期 Data Sync
+  - pattern:
+    - Data Sync
+    expected: データ同期
+# ディスク Disk
+  - pattern:
+    - Disk
+    expected: ディスク
+# ディスパッチャ ディスパッチャー
+  - pattern:
+    - ディスパッチャー
+    expected: ディスパッチャ
+# ディスプレイ ディスプレー
+  - pattern:
+    - ディスプレー
+    expected: ディスプレイ
+# ディレクトリ ディレクトリー
+  - pattern:
+    - ディレクトリー
+    expected: ディレクトリ
+# テクノロジ テクノロジー
+  - pattern:
+    - テクノロジー
+    expected: テクノロジ
+# デザイナ デザイナー
+  - pattern:
+    - デザイナー
+    expected: デザイナ
+# デバッグ デバック
+  - pattern:
+    - デバック
+    expected: デバッグ
+# デフォルト 既定|ディフォルト|デフォールト
+  - pattern:
+    - 既定
+    - ディフォルト
+    - デフォールト
+    expected: デフォルト
+# デプロイ デプロイメント
+  - pattern:
+    - デプロイメント
+    expected: デプロイ
+# デベロッパ ディベロッパー|ディベロッパ|ディヴェロッパ
+# Google Chrome にデベロッパーツールという機能があるのでデベロッパーは含めず
+  - pattern:
+    - ディベロッパー
+    - ディベロッパ
+    - ディヴェロッパ
+    expected: デベロッパ
+# デリバリ デリバリー
+  - pattern:
+    - デリバリー
+    expected: デリバリ
+# デュアルコアCPU Dual Core CPU
+  - pattern:
+    - Dual Core CPU
+    expected: デュアルコアCPU
+# デュアルコア Dual Core|デュアルCore|Dualコア
+  - pattern:
+    - Dual Core
+    - デュアルCore
+    - Dualコア
+    expected: デュアルコア
+# ト
+# ドキュメント ドキュメンテーション ○
+  - pattern:
+    - ドキュメンテーション
+    expected: ドキュメント
+# ドライバ ドライバー
+  - pattern:
+    - ドライバー
+    expected: ドライバ
+# ドラッグ&ドロップ ドラッグ・アンド・ドロップ|ドラッグアンドドロップ
+  - pattern:
+    - /ドラッグ・アンド・ドロップ|ドラッグアンドドロップ/
+    expected: ドラッグ&ドロップ
+# ナ
+# なお 尚
+  - pattern:
+    - 尚
+    expected: なお
+# 二
+# ヌ
+# ネ
+# ノ
+# ハ
+# ハイパーリンク ハイパー・リンク
+  - pattern:
+    - ハイパー・リンク
+    expected: ハイパーリンク
+# パーサ パーサー|パーザー|パーザ
+  - pattern:
+    - パーサー
+    - パーザー
+    - パーザ
+    expected: パーサ
+# パーマリンク Permalink|permalink|permanent link|パーマネントリンク
+  - pattern:
+    - Permalink
+    - permalink
+    - permanent link
+    - パーマネントリンク
+    expected: パーマリンク
+# バッファ バッファー
+  - pattern:
+    - バッファー
+    expected: バッファ
+# パス path|Path
+  - pattern:
+    - path
+    - Path
+    expected: パス
+# パターン パタン
+  - pattern:
+    - パタン
+    expected: パターン
+# ハッシュ hash|Hash
+  - pattern:
+    - hash
+    - Hash
+    expected: ハッシュ
+# バラエティ バラエティー
+  - pattern:
+    - バラエティー
+    expected: バラエティ
+# パラメータ パラメタ|パラメーター
+  - pattern:
+    - パラメタ
+    - パラメーター
+    expected: パラメータ
+# バランサ バランサー
+  - pattern:
+    - バランサー
+    expected: バランサ
+# ハンドラ ハンドラー
+  - pattern:
+    - ハンドラー
+    expected: ハンドラ
+# バックアップ Backup
+  - pattern:
+    - Backup
+    expected: バックアップ
+# ヒ
+# ヒット率 hit率
+  - pattern:
+    - hit率
+    expected: ヒット率
+# ビューア ビューアー|ビューワー|ビューワ
+  - pattern:
+    - ビューワ
+    - ビューワー
+    - ビューアー
+    expected: ビューア
+# フ
+# ファイラ ファイラー
+  - pattern:
+    - ファイラー
+    expected: ファイラ
+# ファクトリ ファクトリー
+  - pattern:
+    - ファクトリー
+    expected: ファクトリ
+# フィーチャーフォン フィーチャフォン
+  - pattern:
+    - フィーチャフォン
+    expected: フィーチャーフォン
+# プレゼン プレゼンテーション|presentation
+  - pattern:
+    - プレゼンテーション
+    - presentation
+    expected: プレゼン
+# ブラウザ ブラウザー ○
+  - pattern:
+    - ブラウザー
+    expected: ブラウザ
+# プライマリ プライマリー
+  - pattern:
+    - プライマリー
+    expected: プライマリ
+# プラットフォーム プラットホーム ○
+  - pattern:
+    - プラットホーム
+    expected: プラットフォーム
+# プレフィックス プレフィクス|プリフィックス
+  - pattern:
+    - プレフィクス
+    - プリフィックス
+    expected: プレフィックス
+# プレイヤー プレーヤ
+  - pattern:
+    - プレーヤ
+    expected: プレイヤー
+# ブレーク ブレイク
+  - pattern:
+    - ブレイク
+    expected: ブレーク
+# プレーン プレイン ,[^グ],<☆ロールプレイング☆>
+  - pattern:
+    - プレイン
+    expected: プレーン
+# プロパティ プロパティー
+  - pattern:
+    - プロパティー
+    expected: プロパティ
+# ファイアウォール ファイアーウォール|ファイヤーウォール|ファイヤウォール|ファイヤーウオール
+  - pattern:
+    - ファイアーウォール
+    - ファイヤーウォール
+    - ファイヤウォール
+    - ファイヤーウオール
+    expected: ファイアウォール
+# フィルタ フィルター
+  - pattern:
+    - /フィルター/
+    expected: フィルタ
+# フィクスチャ フィクスチャー
+  - pattern:
+    - フィクスチャー
+    expected: フィクスチャ
+# フェイルオーバー フェイルオーバ|フェールオーバー|フェールオーバ
+  - pattern:
+    - フェイルオーバ
+    - フェールオーバー
+    - フェールオーバ
+    expected: フェイルオーバー
+# フェーズ フェイズ
+  - pattern:
+    - フェイズ
+    expected: フェーズ
+# フッタ フッター|フッダ
+  - pattern:
+    - フッター
+    - フッダ
+    expected: フッタ
+# プロキシ プロクシ|プロクシー|プロキシー|Proxy|proxy
+  - pattern:
+    - プロクシ
+    - プロクシー
+    - プロキシー
+    - Proxy
+    - proxy
+    expected: プロキシ
+# ブログ blog|Blog [^/],[^/]
+  - pattern:
+    - blog
+    - Blog
+    expected: ブログ
+# プログラマ プログラマー
+  - pattern:
+    - プログラマー
+    expected: プログラマ
+# プロシージャ プロシージャー
+  - pattern:
+    - プロシージャー
+    expected: プロシージャ
+# ブロードキャストレシーバ Broadcast receiver
+  - pattern:
+    - Broadcast
+    - receiver
+    expected: ブロードキャストレシーバ
+# プロバイダ プロバイダー
+  - pattern:
+    - プロバイダー
+    expected: プロバイダ
+# へ
+# ヘビー ヘヴィ 
+  - pattern:
+    - ヘヴィ
+    expected: ヘビー
+# ベンダー ベンダ
+  - pattern:
+    - ベンダ
+    expected: ベンダー
+# ヘッダ ヘッダー|ヘッタ|ヘッター
+  - pattern:
+    - ヘッダー
+    - ヘッタ
+    - ヘッター
+    expected: ヘッダ
+# ベクタ ベクター
+  - pattern:
+    - ベクター
+    expected: ベクタ
+# ページャ ページャー
+  - pattern:
+    - ページャー
+    expected: ページャ
+# ホ
+# ポインタ ポインター
+  - pattern:
+    - ポインター
+    expected: ポインタ
+# ポリモフィズム ポリモルフィズム|ポリモーフィズム|ポルモルフィズム
+  - pattern:
+    - ポリモルフィズム
+    - ポリモーフィズム
+    - ポルモルフィズム
+    expected: ポリモフィズム
+# マ
+# マトリックス マトリクス
+  - pattern:
+    - マトリクス
+    expected: マトリックス
+# マッパ マッピングツール|マッパー
+  - pattern:
+    - マッピングツール
+    - マッパー
+    expected: マッパ
+# マネジメント マネージメント ○
+  - pattern:
+    - マネージメント
+    expected: マネジメント
+# マネージャー マネジャー|マネージャ|マーネジャ|Mgr|MG ○
+  - pattern:
+    - マネジャー
+    - /マネージャ(?!ー)/
+    - マーネジャ
+    - Mgr
+    - MG
+    expected: マネージャー
+# マスタ Master|master 
+# master ブランチ等でmasterは利用しています
+# master
+  # - pattern:
+  #   - Master
+  #   - master
+  #   expected: マスタ
+# マスタ／スレーブ マスタ・スレーブ
+  - pattern:
+    - マスタ・スレーブ
+    expected: マスタ／スレーブ
+# ミ
+# ム
+# メ
+# メーカー メーカ
+  - pattern:
+    - メーカ
+    expected: メーカー
+# # メーリングリスト ML ○HTMLと混在する
+#   - pattern:
+#     - ML
+#     expected: メーリングリスト
+# メタファ メタファー
+  - pattern:
+    - メタファー
+    expected: メタファ
+# メモリ メモリー
+  - pattern:
+    - メモリー
+    expected: メモリ
+# メンテナンス メインテナンス
+  - pattern:
+    - メインテナンス
+    expected: メンテナンス
+# メンテナ メンテナー
+  - pattern:
+    - メンテナー
+    expected: メンテナ
+# メンバー メンバ ,人間の意味では「メンバー」、変数などは「メンバ」
+  - pattern:
+    - /メンバ(ー)/
+    expected: メンバー
+# モ
+# モジュール module|Module
+  - pattern:
+    - module
+    - Module
+    expected: モジュール
+# ヤ
+# ユ
+# ユーザー ユーザ ○
+  - expected: ユーザー
+    pattern:  /ユーザ(?!ー)/
+    specs:
+      - from: ユーザ
+        to:   ユーザー
+# # ユーティリティ ユーティリティー
+  - pattern:
+    - ユーティリティー
+    expected: ユーティリティ
+# ユニットテスト Unitテスト|単体テスト ,,<単体テストはケースバイケース>
+  - pattern:
+    - Unitテスト
+    - 単体テスト
+    expected: ユニットテスト
+# ヨ
+# ラ
+# ライブラリ ライブラリー ○
+  - pattern:
+    - ライブラリー
+    expected: ライブラリ
+# ラッパ ラッパー
+  - pattern:
+    - ラッパー
+    expected: ラッパ
+# リ
+# リーダー リーダ ,[^ー],<人間の意味では「リーダー」、readerの意味では「リーダ」>
+  - pattern:
+    - リーダ
+    expected: リーダー
+# リグレッション デグレード|デグレ
+  - pattern:
+    - デグレード
+    - デグレ
+    expected: リグレッション
+# リスナ リスナー
+  - pattern:
+    - リスナー
+    expected: リスナ
+# リバースプロキシ Reverse Proxy
+  - pattern:
+    - Reverse Proxy
+    expected: リバースプロキシ
+# リファラ リファラー
+  - pattern:
+    - リファラー
+    expected: リファラ
+# リポジトリ リポジトリー|レポジトリ|レポジトリー
+  - pattern:
+    - リポジトリー
+    - レポジトリ
+    - レポジトリー
+    expected: リポジトリ
+# リモートワーク 在宅ワーク|テレワーク
+  - pattern:
+    - 在宅ワーク
+    - テレワーク
+    expected: リモートワーク
+# ル
+# ルータ ルーター
+  - pattern:
+    - ルーター
+    expected: ルータ
+# レ
+# レガシー legacy
+# レビュア レビュアー|レビュワー|レビュワ|レビューアー|レビューア|レビューワー|レビューワ
+  - pattern:
+    - レビュアー
+    - レビュワー
+    - レビュワ
+    - レビューアー
+    - レビューア
+    - レビューワー
+    - レビューワ
+    expected: レビュア
+# レジューム リジューム
+  - pattern:
+    - リジューム
+    expected: レジューム
+# レイヤ レイヤー [^プ]
+  - pattern:
+    - レイヤー
+    expected: レイヤ
+# レジストリ レジストリー
+  - pattern:
+    - レジストリー
+    expected: レジストリ
+# レイテンシ レイテンシー
+  - pattern:
+    - レイテンシー
+    expected: レイテンシ
+# ロ
+# ローダ ローダー
+  - pattern:
+    - ローダー
+    expected: ローダ
+# ワ
+# ワーカ ワーカー|worker
+  - pattern:
+    - ワーカー
+    - worker
+    expected: ワーカ
+# ワンタイムURL Onetime URL
+  - pattern:
+    - Onetime URL
+    expected: ワンタイムURL
+# ヲ
+# ン
+
+# Cookie クッキー|COOKIE|cookie
+  - pattern:
+    - クッキー
+    - COOKIE
+    - cookie
+    expected: Cookie
+# LTS long term support|Long Term Support
+  - pattern:
+    - long term support
+    - Long Term Support
+    expected: LTS
+
+# O/Rマッ ORマッ|O-Rマッ
+  - pattern:
+    - ORマッ
+    expected: O/Rマッ
+# O/Rマッパ O/Rマッパー|ORM
+  - pattern:
+    - O/Rマッパー
+    - ORM
+    expected: O/Rマッパ
+# ToDo todo
+  - pattern:
+    - todo
+    expected: ToDo
+# WebSocket Web Socket
+  - pattern:
+    - Web Socket
+    expected: WebSocket
+# Web ウェブ|ウェッブ|WEB|web ○
+  - pattern:
+    - ウェブ
+    - ウェッブ
+    - /[Ww][Ee][Bb]/
+    options:
+      wordBoundary: true
+    expected: Web
+# Webアプリケーション
+  - pattern:
+    - webapp
+    - webapplication
+    - /([Ww][Ee][Bb])アプリケーション/
+    expected: Webアプリケーション
+# Webサイト webサイト|website|Website|ウェブサイト ○
+  - pattern:
+    - /([Ww][Ee][Bb])サイト/
+    - /([Ww][Ee][Bb] ?)サイト/
+    - /([Ww][Ee][Bb][Ss][Ii][Tt][Ee])/
+    - /([Ww][Ee][Bb] ?[Ss][Ii][Tt][Ee])/
+    - ウェブサイト
+    expected: Webサイト
+# 記述子 ディスクリプタ
+  - pattern:
+    - ディスクリプタ
+    expected: 記述子
+# 属性 アトリビュート
+  - pattern:
+    - アトリビュート
+    expected: 属性
+# 要素 エレメント
+  - pattern:
+    - エレメント
+    expected: 要素
+
+# （固有名詞）
+# 原則としては原典・開発元の表記に準拠すること
+
+# PC パソコン
+  - pattern:
+    - パソコン
+    expected: PC
+# OS
+# OS オペレーティングシステム ○
+  - pattern:
+    - オペレーティングシステム
+    expected: OS
+# Mac
+# macOS Mac OS|Mac OS X||MacOS|Mac OS X|MacOSX
+  - pattern:
+    - /([Mm][Aa][Cc][Oo][Ss])/
+    - /([Mm][Aa][Cc] ?[Oo][Ss])/
+    - /([Mm][Aa][Cc][Oo][Ss][Xx])/
+     /([Mm][Aa][Cc] ?[Oo][Ss] ?[Xx])/
+    expected: macOS
+# MacBook Mac Book|
+  - pattern:
+    - /([Mm][Aa][Cc][Bb][Oo][Oo][Kk])/
+    - /([Mm][Aa][Cc] ?[Bb][Oo][Oo][Kk])/
+    expected: MacBook
+# MacBook Air
+  - pattern:
+    - /([Mm][Aa][Cc][Bb][Oo][Oo][Kk][Aa][Ii][Rr])/
+    - /([Mm][Aa][Cc] ?[Bb][Oo][Oo][Kk] ?[Aa][Ii][Rr])/
+    expected: MacBook Air
+# MacBook Pro
+  - pattern:
+    - MacBook pro
+    expected: MacBook Pro
+# iMac
+  - pattern:
+    - IMac
+    expected: iMac
+# Mac Pro
+  - pattern:
+    - MacPro
+    - macPro
+    - Macpro
+    expected: Mac Pro
+# Mac mini
+  - pattern:
+    - Macmini
+    - macMini
+    - Mac Mini
+    expected: Mac mini
+# iPadOS
+  - pattern:
+    - Ipados
+    - IPadOS
+    expected: iPadOS
+# iPad
+# iOS
+# iPhone
+# watchOS
+  - pattern:
+    - Ipados
+    - IPadOS
+    expected: iPadOS
+# Apple Watch
+
+# Microsoft マイクロソフト|microsoft
+  - pattern:
+    - マイクロソフト
+    - microsoft
+    expected: Microsoft
+
+# iOS SDK <IOS SDK>
+
+# UNIX Unix
+  - pattern:
+    - Unix
+    expected: UNIX
+# Red Hat RedHat|Redhat|redhat|RedHad|Redhad|redhad|レッドハット
+  - pattern:
+    - RedHat
+    - Redhat
+    - redhat
+    - RedHad
+    - Redhad
+    - redhad
+    - レッドハット
+    expected: Red Hat
+# Red Hat Linux RedHatLinux|RedHat Linux
+  - pattern:
+    - RedHatLinux
+    - RedHat Linux
+    expected: Red Hat Linux
+# Ubuntu ubuntu|Ubuntsu|ubuntsu|Ubuntu Linux
+  - pattern:
+    - ubuntu
+    - Ubuntsu
+    - ubuntsu
+    - Ubuntu Linux
+    expected: Ubuntu
+# Debian GNU/Linux Debian|Debian/GNU Linux
+  - pattern:
+    - GNU/Linux Debian
+    - Debian/GNU Linux
+    expected: Debian GNU/Linux
+# Cygwin 
+  - pattern:
+    - cygwin
+    expected: Cygwin
+# ブラウザ
+# Google Chromeの表記の統一
+  - pattern:
+    - Google chrome
+    - google chrome
+    expected: Google Chrome
+# chrome ウェブストア Chrome Web Store|Chromeウェブストア|Chrome Webストア
+  - pattern:
+    - Chrome Web Store
+    - Chromeウェブストア
+    - Chrome Webストア
+    expected: chrome ウェブストア
+# Firefox FireFox|Fire Fox|ファイアーフォックス|ファイヤーフォックス
+  - pattern:
+    - FireFox
+    - Fire Fox
+    - ファイアーフォックス
+    - ファイヤーフォックス
+    expected: Firefox
+# SNS
+# LINE Botの表記の統一
+  - pattern:
+    - LINEbot
+    expected: LINE Bot
+# Twitterの表記の統一
+  - pattern:
+    - twitter
+    - ツイッター
+    expected: Twitter
+# Facebook ○
+  - pattern:
+    - facebook
+    - フェイスブック
+    expected: Facebook
+# Instagramの表記の統一
+  - pattern:
+    - instagram
+    expected: Instagram
+# Google マップ Google Maps|Google Map|GoogleMaps|GoogleMap|Googleマップ
+  - pattern:
+    - Google Maps
+    - Google Map
+    - GoogleMap
+    - GoogleMap
+    - Googleマップ
+    expected: Google マップ
+# Internet Explorer InternetExplorer|IE|MSIE
+  - pattern:
+    - InternetExplorer
+    - internetexplorer
+    - IE
+    - MSIE
+    expected: Internet Explorer
+# Photoshop PhotoShop|photoshop|フォトショップ
+  - pattern:
+    - PhotoShop
+    - photoshop
+    - フォトショップ
+    - フォトショ
+    expected: Photoshop
+# Illustrator 
+  - pattern:
+    - illustrator 
+    - イラレ
+    expected: Illustrator
+# 環境
+# Node.js
+  - pattern:
+    - node.js
+    expected: Node.js
+# 言語
+# JavaScript javascript|Javascript|javaScript|Java Script ○
+  - pattern:
+    - javascript
+    - Javascript
+    - javaScript
+    - Java Script
+    expected: JavaScript
+# Vue.js vue.js
+  - pattern:
+    - vue.js
+    expected: Vue.js
+# React react
+  - pattern:
+    - react
+    expected: React
+# React Native
+  - pattern:
+    - reactnative
+    - ReactNative
+    expected: React Native
+# TypeScript 
+# Ruby
+  - pattern:
+    - ruby
+    expected: Ruby
+# rbenv Rbenv
+  - pattern:
+    - Rbenv
+    expected: rbenv
+# Bundler Bundler
+  - pattern:
+    - bundler
+    expected: Bundler
+# PHP
+  - pattern:
+    - php
+    expected: PHP
+# Visual Basic VisualBasic|VB
+  - pattern:
+    - VisualBasic
+    - VB
+    expected: Visual Basic
+# Visual Studio .NET Visual Studio.NET
+  - pattern:
+    - Visual Studio.NET
+    expected: Visual Studio .NET
+# PHPUnit
+
+# Web API WebAPI|WEBAPI ○
+  - pattern:
+    - WebAPI
+    - WEBAPI
+    - ウェブAPI
+    expected: Web API
+# GraphQL ○
+# REST API RESTful API| ○
+  - pattern:
+    - RESTful API
+    expected: REST API
+# フレームワーク
+# Ruby on Rails Ruby On Rails|RoR
+  - pattern:
+    - rubyonrails
+    - ruby on rails
+    - ror
+    - RoR
+    options:
+      wordBoundary: true
+    expected: Ruby on Rails
+# RubyGems Ruby Gems
+  - pattern:
+    - rubygems
+    - Ruby Gems
+    expected: RubyGems
+# ActionController Action Controller !RubyonRails
+  - pattern:
+    - Action Controller
+    expected: ActionController
+# ActionMailer Action Mailer !RubyonRails
+  - pattern:
+    - Action Mailer
+    expected: ActionMailer
+# ActionPack Action Pack !RubyonRails
+  - pattern:
+    - Action Pack
+    expected: ActionPack
+# ActionView Action View !RubyonRails
+  - pattern:
+    - Action View
+    expected: ActionView
+# ActiveModel Active Model !RubyonRails
+  - pattern:
+    - Active Model
+    expected: ActiveModel
+# ActiveRecord Active Record !RubyonRails
+  - pattern:
+    - Active Record
+    expected: ActiveRecord
+# ActiveResource Active Resource !RubyonRails
+  - pattern:
+    - Active Resource
+    expected: ActiveResource
+# ActiveSupport Active Support !RubyonRails
+  - pattern:
+    - Active Support
+    expected: ActiveSupport
+# Capistrano Capistorano !RubyonRails
+  - pattern:
+    - Capistorano
+    expected: Capistrano
+# ASP.NET ASP .NET
+  - pattern:
+    - ASP .NET
+    - asp.net
+    expected: ASP.NET
+# CakePHP Cakephp|
+  - pattern:
+    - Cakephp
+    - cakePHP
+    - cakephp
+    expected: CakePHP
+# Webサーバ
+# Apache apache|Apatch|apatch
+  - pattern:
+    - apache
+    - Apatch
+    - apatch
+    expected: Apache
+# nginx Nginx|NGINX
+  - pattern:
+    - Nginx
+    - NGINX
+    expected: nginx
+# コンポーネント
+# JavaBeans Bean|JavaBean|Java Bean|Java Beans !Java言語
+  - pattern:
+    - Bean
+    - JavaBean
+    - Java Bean
+    - Java Beans
+    expected: JavaBeans
+# データベース
+# MongoDB Mongo DB
+  - pattern:
+    - Mongo DB
+    expected: MongoDB
+# Bigtable BigTable|Big Ta
+  - pattern:
+    - BigTable
+    - Big Ta
+    expected: Bigtable
+# MySQL
+# PostgreSQL POSTGRES|postgresql ○
+  - pattern:
+    - POSTGRES
+    - postgresql
+    expected: PostgreSQL
+# NoSQL ○
+# DynamoDB ○
+# Bigtable BigTable|Big Table|Big table
+  - pattern:
+    - BigTable
+    - Big Table
+    - Big table
+    expected: Bigtable
+# DBFlute
+  - pattern:
+    - dbflute
+    expected: DBFlute
+# GitHub github ○
+  - pattern:
+    - /([Gg][Ii][Tt][Hh][Uu][Bb])/
+    - /([Gg][Ii][Tt] ?[Hh][Uu][Bb])/
+    expected: GitHub
+# Git ○
+  - pattern:
+    - /([Gg][Ii][Tt])/
+    expected: Git
+    prh: URL内のgitはgitとします。
+# Subversion SubVersion|subversion
+  - pattern:
+    - SubVersion
+    - subversion
+    - SVN
+    expected: Subversion
+# gzip Gzip command
+  - pattern:
+    - Gzip
+    expected: gzip
+# I/O IO
+  - pattern:
+    - IO
+    expected: I/O
+# 文字コード
+# Unicode unicode|ユニコード
+  - pattern:
+    - unicode
+    - ユニコード
+    expected: Unicode
+# UTF-8 UTF8|UTF 8|utf8
+  - pattern:
+    - UTF8
+    - UTF 8
+    - utf8
+    expected: UTF-8
+# editor
+# vi Vi
+  - pattern:
+    - Vi
+    - visual editor
+    - visual interface
+    options:
+      wordBoundary: true
+    expected: vi
+# Vim vim
+  - pattern:
+    - vim
+    expected: Vim
+# Visual Studio Code vscode|VSCode|VScode|○
+  - pattern:
+    - VisualStudioCode
+    expected: Visual Studio Code
+# VS Code ○
+  - expected: VS Code
+    pattern: /vs ?code/i
+    specs:
+      - from: vscode
+        to: VS Code
+      - from: vs code
+        to: VS Code
+      - from: VS Code
+        to: VS Code
+# Markdown
+  - pattern:
+    - /([Mm][Aa][Rr][Kk][Dd][Oo][Ww][Nn])/
+    expected: Markdown
+
+# Vimスクリプト vim script
+# VMware
+# インターフェース
+
+# UI User Interface
+# UI デザイン User Interface design|UserInterfacedesign
+  - pattern:
+    - User Interface design
+    - UserInterfacedesign
+    expected: UI デザイン
+# UX User Experience
+
+# Web UI WebUI
+  - pattern:
+    - WebUI
+    expected: Web UI
+
+# Wi-Fi WiFi
+  - pattern:
+    - WiFi
+    expected: Wi-Fi
+# （MVC、フレームワーク用語）
+
+# モデル Model
+  - pattern:
+    - Model
+    expected: モデル
+# ビュー View|view
+  - pattern:
+    - View
+    - view
+    expected: ビュー
+# コントローラ Controller|コントローラー
+  - pattern:
+    - Controller
+    - コントローラー
+    expected: コントローラ
+# アクションクラス Actionクラス
+  - pattern:
+    - Actionクラス
+    expected: アクションクラス
+# アクションリスナ ActionListener|Action Listener
+  - pattern:
+    - ActionListener
+    - Action Listener
+    expected: アクションリスナ
+# アクションマッピング Actionマッピング|Action Mapping
+  - pattern:
+    - Actionマッピング
+    - ction Mapping
+    expected: アクションマッピング
+# アクションフォームBean ActionFormBean|ActionFormBeans|ActionForm Bean
+  - pattern:
+    - ActionFormBean
+    - ActionFormBeans
+    - ActionForm Bean
+    expected: アクションフォームBean
+# アクションフォーム Action Form|ActionForm
+  - pattern:
+    - Action Form
+    - ActionForm
+    expected: アクションフォーム
+# アクションサーブレット ActionServlet|Action Servlet|Actionサーブレット
+  - pattern:
+    - ActionServlet
+    - Action Servlet
+    - Actionサーブレット
+    expected: アクションサーブレット
+# # アクション Action
+#   - pattern:
+#     - Action
+#     expected: アクション
+# フォームBean Form Bean|フォームビーン
+  - pattern:
+    - Form Bean
+    - フォームビーン
+    expected: フォームBean
+# リクエストオブジェクト Requestオブジェクト
+  - pattern:
+    - Requestオブジェクト
+    expected: リクエストオブジェクト
+# レスポンスオブジェクト Responseオブジェクト
+  - pattern:
+    - Responseオブジェクト
+    expected: レスポンスオブジェクト
+# セッションオブジェクト Sessionオブジェクト
+  - pattern:
+    - Sessionオブジェクト
+    expected: セッションオブジェクト
+# 有名人
+# スティーブ・ジョブズ
+  - pattern:
+    - ジョブス
+    expected: スティーブ・ジョブズ
+# バラ 薔薇 !表外漢字
+  - pattern:
+    - 薔薇
+    expected: バラ
+
+# 1カ所 一1箇所
+  - pattern: /([一二三四五六七八九十０-９])箇所/
+    expected: $1ヵ所
+# 1行目 一行目
+  - pattern: /([一二三四五六七八九十])行目/
+    expected: $1行目
+# ヵ ヶ
+  - pattern: ヶ
+    expected: ヵ
+
+# 行う
+  - pattern: /行な([わいうえおっ])/
+    expected: 行$1
+# いったん 一旦
+  - pattern: 一旦
+    expected: いったん
+# いろいろ 色々
+  - pattern: 色々
+    expected: いろいろ
+# 謳っている
+  - pattern: 謳
+    expected: うた
+# ごとに 毎に
+  - pattern: 毎に
+    expected: ごとに
+#　　すいこう 推敲
+  - pattern: 推敲
+    expected: すいこう
+    prh: 「推敲」は常用漢字外です。
+# さまざま 様々
+  - pattern: 様々
+    expected: さまざま
+# さらに 更に
+  - pattern: /([^変])更に/
+    expected: $1さらに
+# ぜひ 是非
+  - pattern: 是非
+    expected: ぜひ
+# ため 為
+  - pattern: 為
+    expected: ため
+    prh: 「ため」と読む場合はひらがな表記
+# 作る つくら|つくり|つくる|つくれ|つくろ|
+  - pattern: /つく([らりるれろっ])/
+    expected: 作$1
+# 繋げ繋ぎ
+  - pattern: /繋([らりるれろっ])/
+    expected: つなが$1
+    prh: 「繫/繋」は常用漢字外です。
+  - pattern: /繋([いがぎぐげご])/
+    expected: つな$1
+    prh: 「繫/繋」は常用漢字外です。
+# できます 出来ます
+  - pattern:
+    - 出来ます
+    expected: できます
+# フォルダ フォルダー
+  - pattern:
+    - /フォルダ(ー)/
+    expected: フォルダ
+# ほぼない ほぼ無い
+  - pattern:
+    - ほぼ無い
+    expected: ほぼない
+# 一通り ひととおり
+  - pattern:
+      - ひととおり
+      - ひと通り
+      - 一とおり
+    expected: 一通り
+# なぜ 何故
+  - pattern:
+    - 何故
+    expected: なぜ
+# もらう 貰
+  - pattern: /貰([わいうえおっ])/
+    expected: もら$1
+    prh: 「貰う」は常用漢字外です。
 
