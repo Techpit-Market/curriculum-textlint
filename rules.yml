@@ -1,26 +1,97 @@
 version: 1
 
 rules:
+  # A
+  # B
+  # C
+  # D
+  # E
+  # F
+  # G
   # Google Chromeの表記の統一
   - pattern:
-    - Google chrome
-    - google chrome
+      - Google chrome
+      - google chrome
     expected: Google Chrome
+  # H
+  # I
+  # J
+  # K
+  # L
   # LINE BOTの表記の統一
   - pattern:
-    - LINEbot
+      - LINEbot
     expected: LINE BOT
+  # M
+  # N
+  # O
+  # P
+  # Q
+  # R
+  # S
+  # T
   # ToDoの表記の統一
   - pattern:
-    - todo
+      - todo
     expected: ToDo
+  # U
+  # V
+  # W
+  # X
+  # Y
+  # Z
+  # あ
+  # い
+  # う
+  # え
+  # お
+  # か
+  # き
+  # く
+  # け
+  # こ
   # コピー&ペーストは略さずに書く
   - pattern:
-    - コピペ
+      - コピペ
     expected: コピー&ペースト
+  # さ
+  # し
+  # す
   # スマートフォンは略さずに書く
   - pattern:
-    - スマフォ
-    - スマホ
+      - スマフォ
+      - スマホ
     expected: スマートフォン
-
+  # せ
+  # そ
+  # た
+  # ち
+  # つ
+  # て
+  # と
+  # な
+  # に
+  # ぬ
+  # ね
+  # の
+  # は
+  # ひ
+  # ふ
+  # へ
+  # ほ
+  # ま
+  # み
+  # む
+  # め
+  # も
+  # や
+  # ゆ
+  # よ
+  # ら
+  # り
+  # る
+  # れ
+  # ろ
+  # わ
+  # を
+  # ん
