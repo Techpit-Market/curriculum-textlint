@@ -1,6 +1,11 @@
 version: 1
 
 rules:
+  # 解答 直したいワードA|直したいワードB
+  # - pattern:
+  #   - 直したい言葉A
+  #   - 直したい言葉B
+  #   expected: 解答
   # A
   # B
   # C
@@ -10,18 +15,20 @@ rules:
   # G
   # Google Chromeの表記の統一
   - pattern:
-      - Google chrome
-      - google chrome
+     - /[Gg][Oo][Oo][Gg][Ll][Ee][Cc][Hh][Rr][Oo][Mm][Ee]/
+      - /[Gg][Oo][Oo][Gg][Ll][Ee] ?[Cc][Hh][Rr][Oo][Mm][Ee]/
     expected: Google Chrome
+    prh: (製品名)
   # H
   # I
   # J
   # K
   # L
-  # LINE BOTの表記の統一
+  # LINE Botの表記の統一
   - pattern:
-      - LINEbot
-    expected: LINE BOT
+      - /[Ll][Ii][Nn][Ee][Bb][Oo][Tt]/
+    expected: LINE Bot
+    prh: (製品名)
   # M
   # N
   # O
@@ -30,10 +37,15 @@ rules:
   # R
   # S
   # T
+  - pattern:
+      - /[Tt][Ii][Pp][Ss]/
+    expected: Tips
+    prh: (製品名)
   # ToDoの表記の統一
   - pattern:
-      - todo
+      - /[Tt][Oo][Dd][Oo]/
     expected: ToDo
+    prh: (ビジネス用語)
   # U
   # V
   # W
@@ -54,6 +66,7 @@ rules:
   - pattern:
       - コピペ
     expected: コピー&ペースト
+    prh: (ビジネス用語)
   # さ
   # し
   # す
@@ -62,6 +75,7 @@ rules:
       - スマフォ
       - スマホ
     expected: スマートフォン
+    prh: (ビジネス用語)
   # せ
   # そ
   # た
