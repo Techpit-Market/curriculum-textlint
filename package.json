@@ -6,7 +6,8 @@
     "update:submodule": "git submodule update --init",
     "start": "npm run check",
     "check": "textlint ../curriculum/*/*.md",
-    "check:fix": "textlint --fix ../curriculum/*/*.md"
+    "check:fix": "textlint --fix ../curriculum/*/*.md",
+    "gen-report": "node ./gen-report/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "textlint": "^11.0.1",
     "textlint-rule-preset-ja-technical-writing": "^3.1.0",
-    "textlint-rule-prh": "^5.2.0"
-  }
+    "textlint-rule-prh": "^5.2.0",
+    "pug": "^3.0.2"
+  }  
 }
