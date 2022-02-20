@@ -9,7 +9,7 @@ html
             span.ml-4.bg-gray-200.p-1.px-4.border-gray-300.border-2.rounded-full
                 | #{result.messages.length}
             br
-            a.text-gray-400(href="vscode://file/" + result.filePath) #{result.filePath}
+            a.text-blue-300(href="vscode://file/" + result.filePath) #{result.filePath} (vscodeで開く)
         div.p-4
           table.border-collapse.w-full
             each message in result.messages
