@@ -3,32 +3,37 @@ const path = require("path");
 const TextLintEngine = require("textlint").TextLintEngine;
 
 const engine = new TextLintEngine({
-  configFile: ".textlintrc",  
+  configFile: ".textlintrc",
 });
-const pug = require('pug');
+const pug = require("pug");
 
-engine.executeOnFiles(["../curriculum/**/*.md"]).then((results) => {  
+engine.executeOnFiles(["../curriculum/**/*.md"]).then((results) => {
   if (engine.isErrorResults(results)) {
-    results = results.map(result => {
-      return {
-        fileName:  path.basename(result.filePath),
-        ...result
-      }
-    });
-    const files = results.map(result => {
+    results = results.map((result) => {
       return {
         fileName: path.basename(result.filePath),
-        lines: fs.readFileSync(result.filePath).toString().split("\n"),
-      }
-    }).reduce((p,c) => {
-      p[c.fileName] = c;
-      return p;
-    }, {});
+        ...result,
+      };
+    });
+    const files = results
+      .map((result) => {
+        return {
+          fileName: path.basename(result.filePath),
+          lines: fs.readFileSync(result.filePath).toString().split("\n"),
+        };
+      })
+      .reduce((p, c) => {
+        p[c.fileName] = c;
+        return p;
+      }, {});
 
-    fs.writeFileSync("../textlint-report.html", pug.renderFile(path.resolve(__dirname, 'template.pug'), {
-      results,
-      files
-    }));
+    fs.writeFileSync(
+      "../textlint-report.html",
+      pug.renderFile(path.resolve(__dirname, "template.pug"), {
+        results,
+        files,
+      })
+    );
     console.log("Generate Report Success!!");
   } else {
     console.log("All Passed!");
