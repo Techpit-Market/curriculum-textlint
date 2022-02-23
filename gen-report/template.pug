@@ -14,9 +14,9 @@ html
           table.border-collapse.w-full
             each message in result.messages
               tr
-                td.text-right.p-2.border-gray-200.border-2.bg-gray-50.align-top(class="w-20")
+                td.text-left.p-2.border-gray-200.border-2.bg-gray-50.align-top(class="w-30")
                   input(type="checkbox").mr-1
-                  | #{message.line}
+                  | #{message.line}行目
                 td.p-2.border-gray-200.border-2.align-top
                   | #{files[result.fileName].lines[message.line - 1]}
               tr.border-gray-200.border-2.bg-yellow-50.font-bold
