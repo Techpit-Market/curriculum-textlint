@@ -7,7 +7,7 @@ const engine = new TextLintEngine({
 });
 const pug = require("pug");
 
-engine.executeOnFiles(["../curriculum/**/*.md"]).then((results) => {
+engine.executeOnFiles(["../curriculum/*/*.md"]).then((results) => {
   if (engine.isErrorResults(results)) {
     results = results.map((result) => {
       return {
