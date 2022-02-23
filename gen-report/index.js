@@ -34,8 +34,8 @@ engine.executeOnFiles(["../curriculum/*/*.md"]).then((results) => {
         files,
       })
     );
-    console.log("Generate Report Success!!");
+    console.log(`レポートを出力しました。${path.resolve("../textlint-report.html")}`);
   } else {
-    console.log("All Passed!");
+    console.log("指摘箇所が存在しない為レポートは出力しません。");
   }
 });
