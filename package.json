@@ -6,7 +6,9 @@
     "update:submodule": "git submodule update --init",
     "start": "npm run check",
     "check": "textlint ../curriculum/*/*.md",
-    "check:fix": "textlint --fix ../curriculum/*/*.md"
+    "check:fix": "textlint --fix ../curriculum/*/*.md",
+    "gen-report": "node ./gen-report/index.js",
+    "test": "echo 'Error: no test specified'"
   },
   "repository": {
     "type": "git",

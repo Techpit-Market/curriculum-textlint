@@ -31,7 +31,8 @@ package.jsonがルートディレクトリにある場合は以下のコード�
     "postupdate": "npm run update:submodule",
     "update:submodule": "git submodule update --init && git submodule foreach git pull origin master && cd curriculum-textlint && npm install",
     "check": "cd curriculum-textlint && npm run check",
-    "check:fix": "cd curriculum-textlint && npm run check:fix"
+    "check:fix": "cd curriculum-textlint && npm run check:fix",
+    "gen-report": "cd curriculum-textlint && npm run gen-report"
   }
 }
 ```
@@ -44,6 +45,9 @@ npm run check
 
 # 機械的に修正可能な箇所を修正する場合は次のコマンドを実行する
 npm run check:fix
+
+# HTML形式でレポートを出力する
+npm run gen-report
 ```
 
 以上でtextlintを使ってカリキュラムを校正ができます。
