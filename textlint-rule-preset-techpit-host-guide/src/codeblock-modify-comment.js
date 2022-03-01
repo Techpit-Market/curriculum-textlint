@@ -1,4 +1,6 @@
 /**
+ * ソースコードに 「// ここから追加 」などのコメントが入っているかチェック
+ * diffやconsoleの場合は例外
  * @param {RuleContext} context
  */
 module.exports = function (context, options = {}) {
