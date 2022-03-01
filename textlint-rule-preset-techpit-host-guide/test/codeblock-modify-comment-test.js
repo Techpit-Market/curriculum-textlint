@@ -19,22 +19,46 @@ tester.run("rule", rule, {
     aaaa // ここを変更する
 \`\`\`
         `.trim(),
+    `
+\`\`\`
+    /* ここから削除する */
+    aaaa
+    /* ここまで削除する */
+\`\`\`
+            `.trim(),
+    `
+\`\`\`
+    /* ここから編集する */
+    aaaa
+    /* ここまで編集する */
+\`\`\`
+            `.trim(),
+    `
+\`\`\`console
+    aaaa
+\`\`\`
+            `.trim(),
+    `
+\`\`\`diff
+    aaaa
+\`\`\`
+            `.trim(),
   ],
   invalid: [
     {
-        text:  `
+      text: `
 \`\`\`
     aaaa
 \`\`\`
                 `.trim(),
-        errors: [
-            {
-                message: "コードブロックに追加・変更する箇所のコメントアウトがありません。コメントアウトを追加してください。参考：https://techpit-market.gitbook.io/host-guide/4/4-4#4-kdoworikeru",
-                line: 1,
-                column: 1
-            }
-        ]
+      errors: [
+        {
+          message:
+            "コードブロックに追加・変更する箇所のコメントアウトがありません。コメントアウトを追加してください。参考：https://techpit-market.gitbook.io/host-guide/4/4-4#4-kdoworikeru",
+          line: 1,
+          column: 1,
+        },
+      ],
     },
-   
   ],
 });
