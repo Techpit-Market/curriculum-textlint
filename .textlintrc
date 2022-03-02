@@ -7,6 +7,7 @@
         "allowFullWidthQuestion": true,     // 全角の「？」を使えるようにする
       }
     },
+    "preset-techpit-host-guide": true,
     "prh": {
       "rulePaths" :[
         "rules.yml"
