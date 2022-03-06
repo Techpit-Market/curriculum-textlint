@@ -10,6 +10,20 @@ module.exports = function (context) {
           node,
           new RuleError("コードブロックにはファイル拡張子を設定してください。")
         );
+        return;
+      }
+      const isFilePath = (string) => {
+        return string.includes("/") || string.includes(".");
+      };
+
+      const strings = node.lang.split(":");
+
+      if (strings.length === 1 && isFilePath(strings[0])) {
+        report(
+          node,
+          new RuleError("コードブロックにはファイル拡張子を設定してください。")
+        );
+        return;
       }
     },
   };
