@@ -5,7 +5,8 @@
       "no-exclamation-question-mark": {     // 感嘆符
         "allowFullWidthExclamation": true,  // 全角の「！」を使えるようにする
         "allowFullWidthQuestion": true,     // 全角の「？」を使えるようにする
-      }
+      },
+      "ja-no-mixed-period": false, //句点ルールを除外
     },
     "preset-techpit-host-guide": true,
     "prh": {
