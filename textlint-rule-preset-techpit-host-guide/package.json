@@ -20,7 +20,7 @@
   "name": "textlint-rule-preset-techpit-host-guide",
   "directories": {
     "test": "test"
-  },  
+  },
   "license": "MIT",
   "description": ""
 }
