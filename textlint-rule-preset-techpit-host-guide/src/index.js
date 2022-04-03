@@ -5,5 +5,6 @@ module.exports = {
   },
   rulesConfig: {
     "codeblock-modify-comment": true,
+    "do-not-use-h4": true,
   },
 };
