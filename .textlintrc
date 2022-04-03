@@ -6,6 +6,7 @@
         "allowFullWidthExclamation": true,  // 全角の「！」を使えるようにする
         "allowFullWidthQuestion": true,     // 全角の「？」を使えるようにする
       },
+      // TODO: 句点+空白はOKになるように修正 or 空白での改行を禁止ルールするルールを策定したら除外を戻す
       "ja-no-mixed-period": false, //句点ルールを除外
     },
     "preset-techpit-host-guide": true,
