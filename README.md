@@ -1,28 +1,29 @@
 # curriculum-textlint
-curriculum-textlintは校正コストを軽減するために[textlint](https://github.com/textlint/textlint)を導入するためのリポジトリです。
 
+curriculum-textlint はスタイルガイドの遵守状況を執筆者自らが簡潔にチェック・修正できるツールとして[textlint](https://github.com/textlint/textlint)をベースに TechPit のスタイルガイドの一部をルール化した校正ツールです。
 
-## textlintのルールについて
-textlintのルールに関しては、技術書向けのtextlintルールプリセット[textlint-rule-preset-ja-technical-writing](https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing)を採用しています。厳しすぎるルールや足りないルールがあればslackやメールでお気軽にご連絡していただけると幸いです。
+## textlint のルールについて
 
+基本的な textlint のルールに関しては、技術書向けの textlint ルールプリセット[textlint-rule-preset-ja-technical-writing](https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing)を採用しています。厳しすぎるルールや足りないルールがあれば slack やメールでお気軽にご連絡していただけると幸いです。
 
-## (注意点)教材はcurriculumディレクトリ内に作成してください
-このリポジトリで設定しているtextlintはcurriculumディレクトリ内のマークダウンファイルを対象としています。
-なので、教材はcurriculumディレクトリ内で作成してください。
+## (注意点)教材は curriculum ディレクトリ内に作成してください
 
+このリポジトリで設定している textlint は curriculum ディレクトリ内のマークダウンファイルを対象としています。
+なので、教材は curriculum ディレクトリ内で作成してください。
 
-## textlintのセットアップ方法
+## textlint のセットアップ方法
 
-### 1. カリキュラムのルートディレクトリにサブモジュールを追加する
-Gitサブモジュールを追加してください。
+### 1. 教材リポジトリのルートディレクトリにサブモジュールを追加する
 
+以下コマンドを教材リポジトリのルートディレクトリで実行して、Git サブモジュールを追加してください。
+
+```console
+git submodule add git@github.com:Techpit-Market/curriculum-textlint.git
 ```
-$ git submodule add git@github.com:Techpit-Market/curriculum-textlint.git
-```
 
-### 2. ルートディレクトリの package.json に次のスクリプトを追加してください
+### 2. ルートディレクトリに package.json を追加する
 
-package.jsonがルートディレクトリにある場合は以下のコードを追加してください。package.jsonファイルがルートディレクトにない場合は、package.jsonファイルを追加して以下のコードを追記してください。
+教材リポジトリのルートディレクトリで`package.json`ファイルを追加して以下のコードを追記してください。
 
 ```json
 {
@@ -37,17 +38,40 @@ package.jsonがルートディレクトリにある場合は以下のコード�
 }
 ```
 
-### 3. コマンドラインでtextlintを実行する
+### 3. パッケージのインストール
+
+以下のコマンドを教材リポジトリのルートディレクトリで実行してインストールを行っていください。
+
+```console
+npm install
+```
+
+以上で準備は完了です。
+
+## 使用方法
+
+教材リポジトリのルートディレクトリでコマンドを実行して結果の確認を行います。
+
+```console
+npm run check
+```
+
+### 機械的に修正可能な箇所の自動修正
+
+機械的に修正可能な箇所は、次のコマンドを実行することで自動的に修正されます。
+
+```console
+npm run check:fix
+```
+
+### HTML 形式でレポートを出力する
+
+次のコマンドを実行すると、textlint の結果を HTML ファイルに出力することができます。
 
 ```
-npm install
-npm run check
-
-# 機械的に修正可能な箇所を修正する場合は次のコマンドを実行する
-npm run check:fix
-
-# HTML形式でレポートを出力する
 npm run gen-report
 ```
 
-以上でtextlintを使ってカリキュラムを校正ができます。
+上記コマンドの実行結果に HTML ファイルのパスが表示されるので、該当ファイルをお好きなブラウザで開いてください。
+以下のような結果が表示されます。
+![ ](https://user-images.githubusercontent.com/9666372/154825357-bbfd913e-4fca-43a1-83a4-c5f9d8a01cef.png)
