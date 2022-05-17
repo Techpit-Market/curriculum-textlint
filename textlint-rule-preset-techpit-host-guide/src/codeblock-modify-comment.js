@@ -9,7 +9,7 @@ module.exports = function (context, options = {}) {
     [Syntax.CodeBlock](node) {
       const text = getSource(node);
       const words = ["追加", "削除", "変更", "編集"];
-      const excludedLangs = ["diff", "console"];
+      const excludedLangs = ["diff", "console", "解説"];
 
       const invalid =
         words.some((word) => text.includes(word)) ||
