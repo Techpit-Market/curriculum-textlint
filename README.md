@@ -6,6 +6,8 @@ curriculum-textlint はスタイルガイドの遵守状況を執筆者自らが
 
 基本的な textlint のルールに関しては、技術書向けの textlint ルールプリセット[textlint-rule-preset-ja-technical-writing](https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing)を採用しています。厳しすぎるルールや足りないルールがあれば slack やメールでお気軽にご連絡していただけると幸いです。
 
+Textlint でルール化されているスタイルガイドの内容一覧は、このドキュメントの末尾に記載しています。
+
 ## (注意点)教材は curriculum ディレクトリ内に作成してください
 
 このリポジトリで設定している textlint は curriculum ディレクトリ内のマークダウンファイルを対象としています。
@@ -75,3 +77,12 @@ npm run gen-report
 上記コマンドの実行結果に HTML ファイルのパスが表示されるので、該当ファイルをお好きなブラウザで開いてください。
 以下のような結果が表示されます。
 ![ ](https://user-images.githubusercontent.com/9666372/154825357-bbfd913e-4fca-43a1-83a4-c5f9d8a01cef.png)
+
+## TechPit オリジナルのルール一覧
+
+| ルール名                   | 概説                                                      | スタイルガイド                                                                                                                                                    |
+| -------------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `codeblock-modify-comment` | コードブロックに追加や変更の指示があるか確認します        | [4-4 実装箇所の説明のフォーマット > コードを貼り付ける](https://techpit-market.gitbook.io/host-guide/4/4-4#4-kdoworikeru)                                         |
+| `do-not-use-h4`            | h4 以降の見出しを使用していないか確認します               | [4-8 見やすい文章を書くためのマークダウンの書き方 > 見出しの使い方](https://techpit-market.gitbook.io/host-guide/4/markdown#shiniunohah2toh3dakedeh4toshiteimasu) |
+| `over-1000words`           | 1 ページの分量が 10000 字を大きく超えていないか確認します | [4-10 執筆におけるアンチパターン > 分かりにくい教材の構成やパターン](https://techpit-market.gitbook.io/host-guide/4/4-10#karinikuinoyapatn)                       |
+| `write-end-comment`        | パートの最後がコードや画像で終わっていないか確認します    | [4-3 セクション 1 以降を執筆する > パートの最後の一言](https://techpit-market.gitbook.io/host-guide/4/4-3#ptonono)                                                |
