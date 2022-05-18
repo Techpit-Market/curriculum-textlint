@@ -84,5 +84,5 @@ npm run gen-report
 | -------------------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `codeblock-modify-comment` | コードブロックに追加や変更の指示があるか確認します        | [4-4 実装箇所の説明のフォーマット > コードを貼り付ける](https://techpit-market.gitbook.io/host-guide/4/4-4#4-kdoworikeru)                                         |
 | `do-not-use-h4`            | h4 以降の見出しを使用していないか確認します               | [4-8 見やすい文章を書くためのマークダウンの書き方 > 見出しの使い方](https://techpit-market.gitbook.io/host-guide/4/markdown#shiniunohah2toh3dakedeh4toshiteimasu) |
-| `over-1000words`           | 1 ページの分量が 10000 字を大きく超えていないか確認します | [4-10 執筆におけるアンチパターン > 分かりにくい教材の構成やパターン](https://techpit-market.gitbook.io/host-guide/4/4-10#karinikuinoyapatn)                       |
+| `over-10000words`          | 1 ページの分量が 10000 字を大きく超えていないか確認します | [4-10 執筆におけるアンチパターン > 分かりにくい教材の構成やパターン](https://techpit-market.gitbook.io/host-guide/4/4-10#karinikuinoyapatn)                       |
 | `write-end-comment`        | パートの最後がコードや画像で終わっていないか確認します    | [4-3 セクション 1 以降を執筆する > パートの最後の一言](https://techpit-market.gitbook.io/host-guide/4/4-3#ptonono)                                                |
