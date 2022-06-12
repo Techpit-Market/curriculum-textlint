@@ -12,14 +12,9 @@ tester.run("rule", rule, {
     aaaa
 \`\`\`
         `.trim(),
-        `
+    `
 \`\`\`console
     aaaa
-\`\`\`
-        `.trim(),
-    `
-\`\`\`go-qr-code/
-    aaaa // ここを変更する
 \`\`\`
         `.trim(),
   ],
@@ -32,12 +27,25 @@ tester.run("rule", rule, {
                 `.trim(),
       errors: [
         {
-          message:
-            "コードブロックにはファイルのパスを設定してください。",
+          message: "コードブロックにはファイルのパスを設定してください。",
           line: 1,
           column: 1,
         },
       ],
-    },    
+    },
+    {
+      text: `
+    \`\`\`go-qr-code/
+        aaaa // ここを変更する
+    \`\`\`
+            `.trim(),
+      errors: [
+        {
+          message: "コードブロックにはファイルのパスを設定してください。",
+          line: 1,
+          column: 1,
+        },
+      ],
+    },
   ],
 });

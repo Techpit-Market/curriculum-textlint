@@ -5,7 +5,7 @@ module.exports = function (context) {
   const { Syntax, RuleError, report, getSource } = context;
   return {
     [Syntax.CodeBlock](node) {
-      if (node.lang === null) {        
+      if (node.lang === null) {
         return;
       }
 
@@ -14,17 +14,23 @@ module.exports = function (context) {
       }
 
       const isFilePath = (string) => {
-        return string.includes("/") || string.includes(".");
+        return string.includes(".");
       };
 
       const strings = node.lang.split(":");
 
+      if (strings.length === 0) {
+        report(
+          node,
+          new RuleError("コードブロックにはファイルのパスを設定してください。")
+        );
+        return;
+      }
+
       if (strings.length === 1 && !isFilePath(strings[0])) {
         report(
           node,
-          new RuleError(
-            "コードブロックにはファイルのパスを設定してください。"
-          )
+          new RuleError("コードブロックにはファイルのパスを設定してください。")
         );
         return;
       }
