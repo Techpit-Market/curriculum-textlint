@@ -1,5 +1,6 @@
 module.exports = {
   rules: {
+    "codeblock-empty-filepath": require("./codeblock-empty-filepath"),
     "codeblock-modify-comment": require("./codeblock-modify-comment"),
     "codeblock-empty-lang": require("./codeblock-empty-lang"),
     "over-10000words": require("./over-10000words"),
@@ -7,6 +8,7 @@ module.exports = {
     "write-end-comment": require("./write-end-comment"),
   },
   rulesConfig: {
+    "codeblock-empty-filepath": true,
     "codeblock-modify-comment": true,
     "codeblock-empty-lang": true,
     "over-10000words": true,
