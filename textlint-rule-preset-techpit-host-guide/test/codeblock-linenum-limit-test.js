@@ -26,7 +26,7 @@ tester.run("rule", rule, {
     15
 \`\`\`
         `.trim(),
-`
+    `
 \`\`\`
     1
     2
@@ -39,11 +39,11 @@ tester.run("rule", rule, {
     9
     10
 \`\`\`
-        `.trim(),        
+        `.trim(),
   ],
   invalid: [
     {
-      text:     `
+      text: `
       \`\`\`
           1
           2
