@@ -9,10 +9,10 @@ module.exports = {
     "write-end-comment": require("./write-end-comment"),
   },
   rulesConfig: {
-    "codeblock-empty-filepath": true,
-    "codeblock-modify-comment": true,
+    "codeblock-empty-filepath": false,
+    "codeblock-modify-comment": false,
     "codeblock-empty-lang": true,
-    "codeblock-linenum-limit": true,
+    "codeblock-linenum-limit": false,
     "over-10000words": true,
     "do-not-use-h4": true,
     "write-end-comment": true,
