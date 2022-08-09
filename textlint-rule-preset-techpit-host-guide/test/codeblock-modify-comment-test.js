@@ -43,6 +43,16 @@ tester.run("rule", rule, {
     aaaa
 \`\`\`
             `.trim(),
+    `
+\`\`\`解説
+    aaaa
+\`\`\`
+            `.trim(),
+`
+\`\`\`go:解説
+    aaaa
+\`\`\`
+            `.trim(),
   ],
   invalid: [
     {
