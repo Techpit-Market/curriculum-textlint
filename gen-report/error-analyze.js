@@ -16,9 +16,7 @@ const chapter = process.argv[2];
   const report = {};
 
   results.forEach(({ messages, filePath }) => {
-    console.log(filePath);
     messages.forEach((message) => {
-      console.log(message);
       if (report[message.ruleId] === undefined) {
         report[message.ruleId] = 0;
       }
