@@ -11,6 +11,8 @@ language: node_js
 
 node_js: "stable"
 
+dist: focal
+
 cache:
   directories:
     - node_modules
