@@ -58,6 +58,11 @@ npm install
 npm run check
 ```
 
+`check:chap --chapter=<章番号>`で任意の章のみに対して実行できます。
+```console
+npm run check:chap --chapter=1
+```
+
 ### 機械的に修正可能な箇所の自動修正
 
 機械的に修正可能な箇所は、次のコマンドを実行することで自動的に修正されます。
