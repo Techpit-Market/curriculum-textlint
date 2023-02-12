@@ -7,6 +7,7 @@
     "start": "npm run check",
     "check": "textlint ../curriculum/*/*.md",
     "check:fix": "textlint --fix ../curriculum/*/*.md",
+    "check:chap": "textlint ../curriculum/${npm_config_chapter}[!0-9]*/*.md",
     "gen-report": "node ./gen-report/index.js",
     "test": "echo 'Error: no test specified'"
   },
