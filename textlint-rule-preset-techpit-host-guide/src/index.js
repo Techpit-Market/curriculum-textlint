@@ -10,7 +10,7 @@ module.exports = {
   },
   rulesConfig: {
     "codeblock-empty-filepath": true,
-    "codeblock-modify-comment": true,
+    "codeblock-modify-comment": false,
     "codeblock-empty-lang": true,
     "codeblock-linenum-limit": true,
     "over-10000words": true,

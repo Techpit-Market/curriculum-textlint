@@ -1,5 +1,10 @@
 /**
  * ソースコードの行数がn行以上の場合ワーニングを出す
+ * コードブロックに`skiplint`を指定するとスキップ
+ * 例↓
+ * ```yml:docker-compose.yml skiplint
+ * {{コード}}
+ * ```
  * @param {RuleContext} context
  */
 module.exports = function (context, options) {
@@ -7,11 +12,13 @@ module.exports = function (context, options) {
   return {
     [Syntax.CodeBlock](node) {
       const limitLineNum = 15;
-
+      const excludedLangs = ["skiplint"];
       const text = node.value
       const lineNum = text.split("\n").length;
 
-      if (lineNum > limitLineNum) {
+      const invalid = excludedLangs.some((lang) => node.lang !== null && node.lang.includes(lang));
+
+      if (!invalid && lineNum > limitLineNum) {
         report(
           node,
           new RuleError(
